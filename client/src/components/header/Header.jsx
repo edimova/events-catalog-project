@@ -7,6 +7,7 @@ export default function Header() {
         <header className="header">
             <nav >
                 <NavLink
+                
                     to="/"
                     className={styles.link}
                 >
@@ -31,10 +32,10 @@ export default function Header() {
                     REGISTER
                 </NavLink>
                 <NavLink
-                    to="/sing-in"
+                    to="/login"
                     className={styles.link}
                 >
-                    SIGN IN
+                    LOGIN
                 </NavLink>
                 <NavLink
                     to="/logout"

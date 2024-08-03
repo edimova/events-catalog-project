@@ -3,23 +3,23 @@ import { useLogin } from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+    const [error, setError] = useState('');
     const [loginValues, setLoginValues] = useState({
         email: '',
         password: ''
     });
-    const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
     const login = useLogin();
 
     const useLoginHandler = async (email, password) => {
         try {
-            await login(email, password);
-            // navigate('/');
+            await login(email, password);      
+
+            navigate('/');
 
         } catch (error) {
-            console.log("error catched")
-            console.log(error.message)
+           setError(error.message)
         }
 
 
@@ -72,8 +72,8 @@ export default function Login() {
                     />
                 </div>
                     {
-                        message ?? (<p>
-                            {message}
+                        error ?? (<p>
+                            {error}
                         </p>)
 
                     }
