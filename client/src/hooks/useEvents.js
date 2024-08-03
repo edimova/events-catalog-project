@@ -21,8 +21,8 @@ export function useGetOneEvent(eventID){
             const result = await eventsAPI.getOne(eventID);
             setEvent(result);
         })()
-    },[])
+    },[eventID])
     
-    return [event];
+    return [event, setEvent];
 
 }

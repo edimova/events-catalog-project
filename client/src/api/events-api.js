@@ -10,7 +10,7 @@ const getAll = async() =>{
 }
 
 const getOne = async (eventID)=>{
-    return  await request.get('${BASE_URL}/${eventID}');
+    return  await request.get(`${BASE_URL}/${eventID}`);
 }
 const eventsAPI={
     getAll,
