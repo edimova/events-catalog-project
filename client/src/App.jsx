@@ -2,6 +2,7 @@ import './styles.css'
 
 import { Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
+import { AuthContext } from './contexts/AuthContext'
 
 import Header from './components/header/Header'
 import Locations from './components/locations/Locations'
@@ -17,6 +18,7 @@ function App() {
     const [authState, setAuthState] = useState({});
 
     const changeAuthState = (state)=>{
+        localStorage.setItem('accessToken', state.accessToken);
         setAuthState(state);
     }
     const contextData={
