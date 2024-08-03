@@ -1,6 +1,6 @@
 import * as request from './requester';
 
-const BASE_URL = 'http://localhost:3030/collections/events'
+const BASE_URL = 'http://localhost:3030/data/events'
 
 const getAll = async() =>{
     const result = await request.get(BASE_URL);
@@ -9,12 +9,17 @@ const getAll = async() =>{
 
 }
 
-const getOne = async (eventID)=>{
-    return  await request.get(`${BASE_URL}/${eventID}`);
+const getOne =  (eventID)=>{
+    return  request.get(`${BASE_URL}/${eventID}`);
+}
+
+const create = (eventData)=>{
+    return request.post(`${BASE_URL}`, eventData)
 }
 const eventsAPI={
     getAll,
-    getOne
+    getOne,
+    create
 }
 
 export default eventsAPI

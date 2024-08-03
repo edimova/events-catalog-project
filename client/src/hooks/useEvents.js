@@ -26,3 +26,10 @@ export function useGetOneEvent(eventID){
     return [event, setEvent];
 
 }
+export function useCreateEvent(){
+    const eventCreateHandler = (eventData)=>{
+       const result =  eventsAPI.create(eventData)
+       return result;
+    }
+    return eventCreateHandler;
+}
