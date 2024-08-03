@@ -12,3 +12,17 @@ export function useGetAllEvents(){
     },[]);
     return [events, setEvents]
 }
+
+export function useGetOneEvent(eventID){
+    const [event, setEvent] = useState([]);
+
+    useEffect(()=>{
+        (async ()=>{
+            const result = await eventsAPI.getOne(eventID);
+            setEvent(result);
+        })()
+    },[])
+    
+    return [event];
+
+}
