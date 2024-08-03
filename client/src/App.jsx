@@ -1,6 +1,7 @@
 import './styles.css'
 
 import { Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 
 import Header from './components/header/Header'
 import Locations from './components/locations/Locations'
@@ -9,23 +10,39 @@ import Logout from './components/logout/Logout'
 import Categories from './components/categories/Categories'
 import Home from './components/home/Home'
 import Login from './components/login/Login'
+import { AuthContext } from './contexts/AuthContext'
 
 function App() {
 
-	return (
-		<div>
-			<Header />
-			<Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/categories" element={<Categories />} />
-                <Route path="/locations" element={<Locations />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/logout" element={<Logout />} />
-            </Routes>
+    const [authState, setAuthState] = useState({});
 
-		</div>
-	)
+    const changeAuthState = (state)=>{
+        setAuthState(state);
+    }
+    const contextData={
+        userId: authState._id,
+        email: authState.email,
+        accessToken: authState.accessToken,
+        isAuthenticated: !!authState.email,
+        changeAuthState
+
+    }
+    return (
+        <AuthContext.Provider value={contextData}>
+            <div>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/categories" element={<Categories />} />
+                    <Route path="/locations" element={<Locations />} />
+                    <Route path="/register" element={<Register />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/logout" element={<Logout />} />
+                </Routes>
+
+            </div>
+        </AuthContext.Provider>
+    )
 }
 
 export default App
