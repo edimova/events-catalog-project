@@ -7,15 +7,20 @@ export function AuthContextProvider(props) {
     const [authState, setAuthState] = usePersistedState('auth',{});
 
     const changeAuthState = (state)=>{
-        localStorage.setItem('accessToken', state.accessToken);
         setAuthState(state);
+    }
+
+    const logout = ()=>{
+        setAuthState({})
+
     }
     const contextData={
         userId: authState._id,
         email: authState.email,
         accessToken: authState.accessToken,
         isAuthenticated: !!authState.email,
-        changeAuthState
+        changeAuthState,
+        logout
 
     }
 
