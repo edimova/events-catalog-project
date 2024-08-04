@@ -14,12 +14,12 @@ export default function Login() {
 
     const useLoginHandler = async (email, password) => {
         try {
-            await login(email, password);      
+            await login(email, password);
 
             navigate('/');
 
         } catch (error) {
-           setError(error.message)
+            setError(error.message)
         }
 
 
@@ -46,41 +46,44 @@ export default function Login() {
     };
 
     return (
-        <section>
-            <form id="login" onSubmit={formSubmitHandler}>
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        ref={inputRef}
-                        name="email"
-                        id="email"
-                        value={loginValues.email}
-                        onChange={changeHandler}
-                    />
-                </div>
+        <section className="form">
+            <div className="container">
+                <form id="login" onSubmit={formSubmitHandler}>
+                    <div className="row">
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            ref={inputRef}
+                            name="email"
+                            id="email"
+                            value={loginValues.email}
+                            onChange={changeHandler}
+                        />
+                    </div>
 
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="******"
-                        value={loginValues.password}
-                        onChange={changeHandler}
-                    />
-                </div>
+                    <div className="row" >
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="******"
+                            value={loginValues.password}
+                            onChange={changeHandler}
+                        />
+                    </div>
                     {
                         error ?? (<p>
                             {error}
                         </p>)
 
                     }
-                <div>
-                    <input type="submit" value="Login" />
-                </div>
-            </form>
+                    <div>
+                        <input type="submit" value="Login" />
+                    </div>
+
+                </form>
+            </div>
         </section>
     );
 }

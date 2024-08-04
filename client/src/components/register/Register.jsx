@@ -16,7 +16,7 @@ export default function Register() {
     const register = useRegister();
     const navigate = useNavigate();
 
-    const registerHandler = async (email, password) => {      
+    const registerHandler = async (email, password) => {
         try {
             await register(email, password);
             setError('');
@@ -56,68 +56,73 @@ export default function Register() {
     };
 
     return (
-        <section>
-            <form onSubmit={formSubmitHandler}>
-                <div>
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        ref={inputRef}
-                        name="username"
-                        id="username"
-                        value={registerValues.username}
-                        onChange={changeHandler}
-                    />
-                </div>
+        <div className="input-form">
+            <div className="row">
 
-                <div>
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        value={registerValues.email}
-                        onChange={changeHandler}
-                    />
-                </div>
+                <form onSubmit={formSubmitHandler}>
+                    <div className="row">
+                        <label htmlFor="username">Username</label>
+                        <input
+                            type="text"
+                            ref={inputRef}
+                            name="username"
+                            id="username"
+                            value={registerValues.username}
+                            onChange={changeHandler}
+                        />
+                    </div>
 
-
-                <div>
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="******"
-                        value={registerValues.password}
-                        onChange={changeHandler}
-                    />
-                </div>
+                    <div>
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            value={registerValues.email}
+                            onChange={changeHandler}
+                        />
+                    </div>
 
 
-                <div>
-                    <label htmlFor="repeatedPassword">Repeat password</label>
-                    <input
-                        type="password"
-                        name="repeatedPassword"
-                        id="repeatedPassword"
-                        placeholder="******"
-                        value={registerValues.repeatedPassword}
-                        onChange={changeHandler}
-                    />
-                </div>
+                    <div>
+                        <label htmlFor="password">Password</label>
+                        <input
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="******"
+                            value={registerValues.password}
+                            onChange={changeHandler}
+                        />
+                    </div>
 
-                <div>
-                    {error && (
-                        <p>{error}</p>
-                    )}
 
-                </div>
+                    <div>
+                        <label htmlFor="repeatedPassword">Repeat password</label>
+                        <input
+                            type="password"
+                            name="repeatedPassword"
+                            id="repeatedPassword"
+                            placeholder="******"
+                            value={registerValues.repeatedPassword}
+                            onChange={changeHandler}
+                        />
+                    </div>
 
-                <div>
-                    <input type="submit" value="Register" />
-                </div>
-            </form>
-        </section>
+                    <div>
+                        {error && (
+                            <p>{error}</p>
+                        )}
+
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Register" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
     );
 }
