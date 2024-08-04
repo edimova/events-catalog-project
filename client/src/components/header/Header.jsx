@@ -18,7 +18,7 @@ export default function Header() {
 
                     {isAuthenticated ?
                         (<div id="user" className={styles.div}>
-                            <NavLink to="/create-event" className={styles.link}>CREATE EVENT</NavLink>
+                            <NavLink to="/events/create" className={styles.link}>CREATE EVENT</NavLink>
                             <NavLink to="/logout" className={styles.link}>LOG OUT</NavLink>
                         </div>
                         ) :

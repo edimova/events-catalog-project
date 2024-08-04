@@ -25,10 +25,11 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/events" element ={<EventsList/>}/>
+                    <Route path="/events/create" element={<CreateEvent />} />
                     <Route path="/events/:eventId/details" element ={<EventDetails/>}/>
                     <Route path="/categories" element={<Categories />} />
                     <Route path="/locations" element={<Locations />} />
-                    <Route path="/create-event" element={<CreateEvent />} />
+
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/logout" element={<Logout />} />

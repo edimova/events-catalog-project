@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useCreateEvent } from "../../hooks/useEvents";
+import { useLocations } from "../../hooks/useLocations";
+import { useCategories } from "../../hooks/useCategories";
 
 export default function CreateEvent() {
     const [error, setError] = useState('');
@@ -10,19 +12,21 @@ export default function CreateEvent() {
         date: '',
         description: '',
         url: '',
-        category:'',
+        category: '',
         location: '',
     });
 
     const inputRef = useRef();
     const navigate = useNavigate();
     const createEvent = useCreateEvent();
+    const [locations] = useLocations();
+    const [categories] = useCategories();
 
-    const createHandler = async () => {      
+    const createHandler = async () => {
         try {
-           const {_id:eventId} =  await createEvent(event);
-            
-           navigate(`/events/${eventId}/details`);
+            const { _id: eventId } = await createEvent(event);
+
+            navigate(`/events/${eventId}/details`);
 
         } catch (error) {
             setError(error.message);
@@ -39,7 +43,7 @@ export default function CreateEvent() {
 
     const formSubmitHandler = (e) => {
         e.preventDefault();
-       createHandler();
+        createHandler();
 
     };
 
@@ -53,7 +57,7 @@ export default function CreateEvent() {
     };
 
     return (
-        <section>
+        <section className="container">
             <form onSubmit={formSubmitHandler}>
                 <div className="container">
                     <label htmlFor="name">Name</label>
@@ -78,14 +82,17 @@ export default function CreateEvent() {
                 </div>
                 <div>
                     <label htmlFor="category">Category</label>
-                    <select 
+                    <select
                         name="category"
                         id="category"
                         value={event.category}
                         onChange={changeHandler}
                     >
-                        <option value="music">Music</option>
-                        <option value="sport">Sport</option>
+                        {categories.map((category) =>{
+                            return <option key={category._id} value={category._id}>{category.name}</option>
+                        })}
+                        
+                      
 
                     </select>
                 </div>
@@ -116,13 +123,18 @@ export default function CreateEvent() {
 
                 <div>
                     <label htmlFor="location">Location</label>
-                    <input
-                        type="text"
+                    <select
                         name="location"
                         id="location"
                         value={event.location}
                         onChange={changeHandler}
-                    />
+                    >
+                        {locations.map((location) => {
+                          return  <option key={location._id} value={location._id}>{location.name}</option>
+                        })}
+
+                    </select>
+
                 </div>
 
                 <div>
