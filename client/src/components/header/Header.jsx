@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./Header.module.css"
 import { useContext } from "react";
-import AuthContext from "../../contexts/AuthContext";
+import { AuthContext }from "../../contexts/AuthContext.jsx";
 
 export default function Header() {
     const { isAuthenticated } = useContext(AuthContext);
