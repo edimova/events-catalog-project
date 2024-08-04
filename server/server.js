@@ -1339,6 +1339,70 @@
     	}
     };
     var seedData = {
+        events:{
+
+        },
+        locations:{
+            "46d18bb2-d38e-446e-a969-2d428727187e":{
+                   _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                   name: "Plovdiv",
+                   url: "https://visitmybulgaria.com/wp-content/uploads/2023/11/18-Facts-About-Plovdiv-That-You-Probably-Didnt-Know.jpg",
+                   _createdOn: 1722763530972,
+                   _id: "46d18bb2-d38e-446e-a969-2d428727187e"
+               },
+             "53c474b0-46b8-41fa-b716-eb07ad24d3e6":  {
+                   _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                   name: "Sofia",
+                   url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTobAZbtOgnhrkXWlpb6WfYgvT5mcfOV_il8Q&s",
+                   _createdOn: 1722763689291,
+                   _id: "53c474b0-46b8-41fa-b716-eb07ad24d3e6"
+               },
+              "f1df8aeb-2db3-42b8-9d7d-5733166432e7": {
+                   _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                   name: "Varna",
+                   url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbffy-JOON8TcvM8w6r-6jNTnQl1E7Dbo_Dg&s",
+                  _createdOn: 1722763791334,
+                   _id: "f1df8aeb-2db3-42b8-9d7d-5733166432e7"
+               },
+               "5d1c42c0-c456-4663-a424-f51bc0efe12a":{
+                   _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                   name: "Burgas",
+                   url: "https://lilybeach.bg/wp-content/uploads/2022/06/1920-burgas.jpg",
+                   _createdOn: 1722764003352,
+                   _id: "5d1c42c0-c456-4663-a424-f51bc0efe12a"
+               }
+           },
+           categories:{
+            "5391c247-67b4-4f03-8b18-5511a56a1b7a":
+                {
+                    _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                    name: "Music",
+                    imageUrl: "https://previews.123rf.com/images/butenkow/butenkow1711/butenkow171100727/90745568-vector-logo-music.jpg",
+                    _createdOn: 1722784444353,
+                    _id: "5391c247-67b4-4f03-8b18-5511a56a1b7a"
+                },
+             "52305202-930c-4a41-bef3-18db348235bb":   {
+                    _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                    name: "Theater",
+                    imageUrl: "https://st4.depositphotos.com/1533030/30023/v/450/depositphotos_300230804-stock-illustration-icon-comedy-tragedy-theatrical-masks.jpg",
+                    _createdOn: 1722784861063,
+                    _id: "52305202-930c-4a41-bef3-18db348235bb"
+                },
+               "62901fe9-fb28-40e0-b97b-792acc8c5175": {
+                    _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                    name: "Cinema",
+                    imageUrl: "https://as2.ftcdn.net/v2/jpg/01/33/44/33/1000_F_133443361_CFWR0cAYXAItwh3njbYKXBfKazNQda3f.jpg",
+                    _createdOn: 1722785052221,
+                    _id: "62901fe9-fb28-40e0-b97b-792acc8c5175"
+                },
+               "4e4ca47d-dfb3-4ba4-be0b-a253fbd2a261": {
+                    _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                    name: "Sports",
+                    imageUrl: "https://www.shutterstock.com/image-vector/letter-s-abstract-logo-vector-260nw-2033948879.jpg",
+                    _createdOn: 1722785085779,
+                    _id: "4e4ca47d-dfb3-4ba4-be0b-a253fbd2a261"
+                }
+            },   
     	recipes: {
     		"3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
     			_ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
