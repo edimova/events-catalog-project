@@ -1340,7 +1340,39 @@
     };
     var seedData = {
         events:{
-
+            "57921926-b188-493d-a9e7-d96d2e87bbd1":{
+               _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                name: "Signal Symphonic",
+                date: "2024-09-25",
+                description: "Rock concert",
+                url: "https://bg.content.eventim.com/static/uploaded/bg/d/8/b/n/d8bn_300_300.jpeg",
+                category: "",
+                location: "",
+                _createdOn: 1722860998363,
+                _id: "57921926-b188-493d-a9e7-d96d2e87bbd1"
+            },
+           "ff74f32a-944f-4598-a964-f9c54c558995": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                name: "Grafa Tour",
+                date: "2024-08-11",
+                description: "The happiest tour",
+                url: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQnpo5W-5VzdA85NC1Wigkn3dhFxYQetvVF-Bi7BryIKFD3j7m5",
+                category: "5391c247-67b4-4f03-8b18-5511a56a1b7a",
+                location: "46d18bb2-d38e-446e-a969-2d428727187e",
+                _createdOn: 1722861340857,
+                _id: "ff74f32a-944f-4598-a964-f9c54c558995"
+            },
+            "93265e2c-17ed-41a2-b2f9-45caf6ec4ff5": {
+                _ownerId: "60f0cf0b-34b0-4abd-9769-8c42f830dffc",
+                name: "Левски-Крумовград",
+                date: "2024-08-10",
+                description: "4-ия кръг на Първа лига \"Левски\"- „Крумовград“",
+                url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTn2qkQzMHl_7zdkr4pLdSult86ayFZqP7wMM3kPbXVeJ85L5V",
+                category: "4e4ca47d-dfb3-4ba4-be0b-a253fbd2a261",
+                location: "53c474b0-46b8-41fa-b716-eb07ad24d3e6",
+                _createdOn: 1722862005664,
+                _id: "93265e2c-17ed-41a2-b2f9-45caf6ec4ff5"
+            }
         },
         locations:{
             "46d18bb2-d38e-446e-a969-2d428727187e":{
