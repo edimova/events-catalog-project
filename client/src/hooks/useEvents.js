@@ -14,7 +14,7 @@ export function useGetAllEvents(){
 }
 
 export function useGetOneEvent(eventID){
-    const [event, setEvent] = useState([]);
+    const [event, setEvent] = useState({});
 
     useEffect(()=>{
         (async ()=>{
