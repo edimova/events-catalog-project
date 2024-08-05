@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Event(props) {
+export default function EventCard(props) {
   const event = props.event;
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ export default function Event(props) {
   return (
     <div className="container">
       <div className="row">
-        <img className="event-image" src={`${event.url}`} alt="event" />
+        <img className="image" src={`${event.url}`} alt="event" />
       </div>
       <div className="row">{event.name}, Date , Location</div>
       <div className="row">

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useCreateEvent } from "../../hooks/useEvents";
-import { useLocations } from "../../hooks/useLocations";
+import { useGetAllLocations } from "../../hooks/useLocations";
 import { useCategories } from "../../hooks/useCategories";
 
 export default function CreateEvent() {
@@ -19,7 +19,7 @@ export default function CreateEvent() {
   const inputRef = useRef();
   const navigate = useNavigate();
   const createEvent = useCreateEvent();
-  const [locations] = useLocations();
+  const [locations] = useGetAllLocations();
   const [categories] = useCategories();
 
   const createHandler = async () => {

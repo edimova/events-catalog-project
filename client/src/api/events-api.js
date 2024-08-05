@@ -16,10 +16,20 @@ const getOne =  (eventID)=>{
 const create = (eventData)=>{
     return request.post(`${BASE_URL}`, eventData)
 }
+
+const getAllByRelation =(relation) =>{    
+    const params = new URLSearchParams({
+        where: `${relation.key}="${relation.value}"`
+    })
+
+    return request.get(`${BASE_URL}?${params.toString()}`);
+
+}
 const eventsAPI={
     getAll,
     getOne,
-    create
+    create,
+    getAllByRelation,
 }
 
 export default eventsAPI
