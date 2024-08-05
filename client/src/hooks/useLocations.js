@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import locationsAPI from "../api/locations-api"
 
-export function useLocations() {
+export function useGetAllLocations() {
     const [locations, setLocations] = useState([]);
     useEffect(() => {
         (async () => {
