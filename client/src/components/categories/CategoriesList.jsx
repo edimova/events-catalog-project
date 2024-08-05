@@ -1,7 +1,7 @@
 import { useCategories } from "../../hooks/useCategories";
-import Category from "./Category";
+import CategoryCard from "./CategoryCard";
 
-export default function Categories() {
+export default function CategoriesList() {
     const [categories, setCategories] = useCategories();
     console.log("categories")
     console.log(categories)
@@ -10,7 +10,7 @@ export default function Categories() {
      
             <div className="row">
             {categories.map((category) => {
-               return <Category key={category._id} categoryID={category._id}/>
+               return <CategoryCard key={category._id} categoryID={category._id}/>
             })}
    
         </div>
