@@ -1,8 +1,8 @@
-import { useGetAllEvents } from "../../hooks/useEvents";
+import {  useGetUpCommingEvents } from "../../hooks/useEvents";
 import EventCard from "./EventCard";
 
 export default function UpcomingEvents() {
-    const [events, setEvents] = useGetAllEvents();
+    const [events, setEvents] = useGetUpCommingEvents();
 
     return (
       <div className="row">
