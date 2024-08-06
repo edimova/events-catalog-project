@@ -16,7 +16,6 @@ html {
   outline: none;
 }
 
-
 .header {
   width: 100%;
   height: 4rem;
@@ -32,7 +31,7 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857;
@@ -76,25 +75,30 @@ body {
   color: #fff;
 }
 
-
-
 .container {
-  padding: 38px;  
+  padding: 38px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   text-align: center;
-  
 }
 .row {
-  padding: 2px;  
+  padding: 2px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   text-align: center;
+}
 
+.column {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 /* ul {
   list-style: none;
@@ -126,18 +130,16 @@ body {
   height: 100px;
   width: 120px;
   border-radius: 12px;
-  border: 2px solid #f70e0e
+  border: 2px solid #f70e0e;
 }
 
-.form{
-
-    border: #b1b0b0 solid 1px;
-    padding: 12px 19px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    color: #000;
-    width: 100%;
-
+.form {
+  border: #b1b0b0 solid 1px;
+  padding: 12px 19px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  color: #000;
+  width: 100%;
 }
 .before {
   margin-right: 10px;
@@ -147,3 +149,20 @@ body {
   margin-left: 10px;
 }
 
+.ul {
+  columns: 5;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto; /* can change this */
+  width: 200px;
+}
+
+#event-image {
+  background-position: center;
+  background-size: cover;
+  height: 150px;
+  width: 180px;
+  border-radius: 12px;
+  border: 2px solid #f70e0e;
+}
