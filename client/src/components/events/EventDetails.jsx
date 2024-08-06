@@ -20,7 +20,7 @@ export default function EventDetails() {
   const removeEvent = useRemoveEvent();
   const navigate = useNavigate()
 
-  const addVisitorHandler = () => {
+  const addVisitorHandler = async() => {
     addVisitor(eventId);
   };
 

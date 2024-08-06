@@ -16,3 +16,8 @@ export const logout = ()=>{
     const logoutData = request.get(`${BASE_URL}/logout`);
     return logoutData;  
 }
+
+export const loadUser =(userId)=>{
+    const logoutData = request.get(`${BASE_URL}/${userId}`);
+    return logoutData;  
+}

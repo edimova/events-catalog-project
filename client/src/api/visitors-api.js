@@ -26,9 +26,10 @@ const getAllByRelation =(relation) =>{
 
 const getVisits =(userID, eventID)=>{
     const params = new URLSearchParams({
-        where: `_ownerId="${userID}"`,        
+        where: `"_ownerId"="${userID}","_id"="${eventID}"`,        
     })
 
+    console.log(params.toString())
     return request.get(`${BASE_URL}?${params.toString()}`);
 }
 
