@@ -7,9 +7,9 @@ export const login = (email, password)=>{
     return authData;
 }
 
-export const register = (email, password)=>{
-    const registerData =  request.post(`${BASE_URL}/register`,{email,password});
-    return registerData;
+export const register = (email,password, username)=>{
+    const responseData =  request.post(`${BASE_URL}/register`,{email,password, username});
+    return responseData;
 }
 
 export const logout = ()=>{

@@ -17,9 +17,9 @@ export default function Register() {
   const register = useRegister();
   const navigate = useNavigate();
 
-  const registerHandler = async (email, password) => {
+  const registerHandler = async (email, password,username) => {
     try {
-      await register(email, password);
+      await register(email, password,username);
       setError("");
       navigate("/");
     } catch (error) {
@@ -39,7 +39,7 @@ export default function Register() {
       return;
     }
     console.log("Form Submitted");
-    registerHandler(registerValues.email, registerValues.password);
+    registerHandler(registerValues.email, registerValues.password, registerValues.username);
   };
 
   const changeHandler = (e) => {

@@ -31,8 +31,8 @@ export const useLogout =()=>{
 export const useRegister = ()=>{
     const {changeAuthState} = useContext(AuthContext);
 
-    const registerHandler = async(email, passWord)=>{        
-           const {password, ...authData} =  await register(email,passWord);
+    const registerHandler = async(email, passWord, username)=>{        
+           const {password, ...authData} =  await register(email,passWord, username);
            changeAuthState(authData);
            return authData;
     }
