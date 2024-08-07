@@ -6,6 +6,7 @@ import { useCategories } from "../../hooks/useCategories";
 import eventsAPI from "../../api/events-api";
 import { useForm } from "../../hooks/useForm";
 import styles from "./Event.module.css";
+import ConfirmView from "../common/ConfirmView";
 
 const initialValues = {
   name: "",
@@ -20,13 +21,36 @@ export default function EditEvent() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { eventId } = useParams();
+  
   const [event, setEvent] = useGetOneEvent(eventId);
+  const sumbmitCallback = async (values)=>{
+
+    
+    if (values.name === "") {
+      setError("Event name is manadory!");
+      return;
+    }
+    if (values.date === "") {
+      setError("Event date is manadory!");
+      return;
+    }
+    if(values.location ===""){
+      setError("Event location is manadory!");
+      return;
+    }
+    if(values.category ===""){
+      setError("Event category is manadory!");
+      return;
+    }
+
+    const updatedEvent = await eventsAPI.update(eventId, values);
+    navigate(`/events/${eventId}/details`);
+  }
+
+
   const { values, changeHandler, submitHandler } = useForm(
     event,
-    async (values) => {
-      const updatedEvent = await eventsAPI.update(eventId, values);
-      navigate(`/events/${eventId}/details`);
-    }
+    sumbmitCallback
   );
 
   const inputRef = useRef();
@@ -34,11 +58,16 @@ export default function EditEvent() {
   const [locations] = useGetAllLocations();
   const [categories] = useCategories();
 
+  const cancelConfirmHandler =()=>{
+    setError("")
+  }
   useEffect(() => {
     inputRef.current.focus();
   }, []);
 
   return (
+    <>
+
     <section className={styles.form}>
       <div className={styles.form_container}>
         <form onSubmit={submitHandler}>
@@ -134,5 +163,14 @@ export default function EditEvent() {
         </form>
       </div>
     </section>
+    {error && (
+        <ConfirmView
+          message={error}
+          hasConfirm={false}
+          onConfirm={() => { }}
+          onCancel={cancelConfirmHandler}
+        />
+      )}
+    </>
   );
 }

@@ -37,9 +37,11 @@ export default function ConfirmView(props) {
               textAlign: "center",
             }}
           >
-            <button className="btn" onClick={props.onConfirm}>
-              CONFIRM
-            </button>
+            {props.hasConfirm && (
+              <button className="btn" onClick={props.onConfirm}>
+                CONFIRM
+              </button>)}
+
             <button className="btn" onClick={props.onCancel}>
               CANCEL
             </button>

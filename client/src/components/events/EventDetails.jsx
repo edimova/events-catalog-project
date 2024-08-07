@@ -71,6 +71,7 @@ export default function EventDetails() {
       {confirmOn && (
         <ConfirmView
           message={`Do you want to delete ${event.name} event?`}
+          hasConfirm={true}
           onConfirm={removeEventHandler}
           onCancel={cancelConfirmHandler}
         />
