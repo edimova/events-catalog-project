@@ -40,11 +40,20 @@ const getUpcoming = async()=>{
         pageSize: 4,
     })
     const result = await request.get(`${BASE_URL}?${params.toString()}`);
-    console.log(result)
     const upcomming = Object.values(result);
     return upcomming;
 
 }
+
+const loadCurrentVisitor =async(eventId,userId)=>{
+    const params = new URLSearchParams({
+        where:`_id="${eventId}"`,
+        load:`visit=${userId}:visitors`
+    })
+    const result =  await request.get(`${BASE_URL}?${params.toString()}`);
+    return result;
+}
+
 const eventsAPI={
     getAll,
     getOne,
@@ -52,6 +61,7 @@ const eventsAPI={
     remove,
     update,
     getUpcoming,
+    loadCurrentVisitor,
     getAllByRelation,
 }
 
