@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useCreateEvent } from "../../hooks/useEvents";
 import { useGetAllLocations } from "../../hooks/useLocations";
 import { useCategories } from "../../hooks/useCategories";
+import styles from "./Event.module.css";
 
 export default function CreateEvent() {
   const [error, setError] = useState("");
@@ -50,97 +51,100 @@ export default function CreateEvent() {
   };
 
   return (
-    <section className="container">
-      <form onSubmit={formSubmitHandler}>
-        <div className="container">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            ref={inputRef}
-            name="name"
-            id="name"
-            value={event.name}
-            onChange={changeHandler}
-          />
-        </div>
-        <div>
-          <label htmlFor="date">Data</label>
-          <input
-            type="date"
-            name="date"
-            id="date"
-            value={event.date}
-            onChange={changeHandler}
-          />
-        </div>
-        <div>
-          <label htmlFor="category">Category</label>
-          <select
-            name="category"
-            id="category"
-            value={event.category}
-            onChange={changeHandler}
-          >
-            <option key="empty" value=""></option>
-            {categories.map((category) => {
-              return (
-                <option key={category._id} value={category._id}>
-                  {category.name}
-                </option>
-              );
-            })}
-          </select>
-        </div>
+    <section className={styles.form}>
+      <div className={styles.form_container}>
+        <form onSubmit={formSubmitHandler}>
+          <div className={styles.title}>NEW EVENT</div>
+          <div>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              ref={inputRef}
+              name="name"
+              id="name"
+              value={event.name}
+              onChange={changeHandler}
+            />
+          </div>
+          <div>
+            <label htmlFor="date">Data</label>
+            <input
+              type="date"
+              name="date"
+              id="date"
+              value={event.date}
+              onChange={changeHandler}
+            />
+          </div>
+          <div>
+            <label htmlFor="category">Category</label>
+            <select
+              name="category"
+              id="category"
+              value={event.category}
+              onChange={changeHandler}
+            >
+              <option key="empty" value=""></option>
+              {categories.map((category) => {
+                return (
+                  <option key={category._id} value={category._id}>
+                    {category.name}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
 
-        <div>
-          <label htmlFor="description">Description</label>
-          <input
-            type="text"
-            name="description"
-            id="description"
-            value={event.description}
-            onChange={changeHandler}
-          />
-        </div>
+          <div>
+            <label htmlFor="description">Description</label>
+            <input
+              type="text"
+              name="description"
+              id="description"
+              value={event.description}
+              onChange={changeHandler}
+            />
+          </div>
 
-        <div>
-          <label htmlFor="url">Image</label>
-          <input
-            type="text"
-            name="url"
-            id="url"
-            value={event.url}
-            onChange={changeHandler}
-          />
-        </div>
+          <div>
+            <label htmlFor="url">Image</label>
+            <input
+              type="text"
+              name="url"
+              id="url"
+              value={event.url}
+              onChange={changeHandler}
+            />
+          </div>
 
-        <div>
-          <label htmlFor="location">Location</label>
-          <select
-            name="location"
-            id="location"
-            value={event.location}
-            onChange={changeHandler}
-          >
-            <option key="empty" value=""></option>
-            {locations.map((location) => {
-              return (
-                <option key={location._id} value={location._id}>
-                  {location.name}
-                </option>
-              );
-            })}
-          </select>
-        </div>
+          <div>
+            <label htmlFor="location">Location</label>
+            <select
+              name="location"
+              id="location"
+              value={event.location}
+              onChange={changeHandler}
+            >
+              <option key="empty" value=""></option>
+              {locations.map((location) => {
+                return (
+                  <option key={location._id} value={location._id}>
+                    {location.name}
+                  </option>
+                );
+              })}
+            </select>
+          </div>
 
-        <div>{error && <p>{error}</p>}</div>
+          <div>{error && <p>{error}</p>}</div>
 
-        <div>
-          <button className="btn" type="submit">
-            CREATE
-          </button>
-        </div>
-      </form>
+          <div>
+            <button className="btn" type="submit">
+              CREATE
+            </button>
+          </div>
+        </form>
+      </div>
     </section>
   );
 }
