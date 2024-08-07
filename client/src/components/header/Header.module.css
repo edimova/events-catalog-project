@@ -1,27 +1,40 @@
-.link{
-    text-decoration: none;
-    display: inline;
-    color: #f1eeeea1;
-    font-size: 12px;
-    line-height: 15px;
-    padding: 15px;
+.link {
+   text-decoration: none;
+   display: inline;
+   color: #f1eeeea1;
+   font-size: 12px;
+   line-height: 15px;
+   padding: 15px;
 
-    &:active{
-        color: #fff;
-        background: #000;
-        box-shadow: #9d9d9d66 0px 0px 56px 26px;
-    }
-   
- .div{
-    display: inline;  
- }
- .username{
-    text-decoration: none;
-    display: inline;
-    color: #f1eeeea1;    
-    font-size: 12px;
-    line-height: 15px;
-    padding: 15px;
-    display: inline;  
- } 
+   &:active {
+      color: #fff;
+      background: #000;
+      box-shadow: #9d9d9d66 0px 0px 56px 26px;
+   }
+}
+
+.link_active {
+   text-decoration: none;
+   display: inline;
+   font-size: 12px;
+   line-height: 15px;
+   padding: 15px;
+
+   color: #fff;
+   background: #000;
+   box-shadow: #9d9d9d66 0px 0px 56px 26px;
+}
+
+.div {
+   display: inline;
+}
+
+.username {
+   text-decoration: none;
+   display: inline;
+   color: #f1eeeea1;
+   font-size: 12px;
+   line-height: 15px;
+   padding: 15px;
+   display: inline;
 }
