@@ -19,7 +19,8 @@ export function useGetOneEvent(eventID) {
     category:'',
     description:'',
     url:'',
-    location:''});
+    location:'',
+  });
 
   useEffect(() => {
     (async () => {

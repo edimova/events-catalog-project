@@ -22,15 +22,18 @@ export function useRemoveVisior(){
 }
 
 export function useCheckVisior(userID, eventID){
-    const  [isVisitor, setIsVisitor] = useState(false);
-    // useEffect(()=>{
-    //     (async () =>{
-    //            const result = await visitorAPI.getVisits(userID, eventID);
-    //            console.log(result);
-    //            const isVisit = result.length >0;
-    //            setIsVisitor(isVisit);
-    //     })();
+    const  [visit, setVisit] = useState({});
+    useEffect(()=>{
+        (async () =>{
+               const result = await visitorAPI.getVisits(userID, eventID);
+               let visitInfo ={}
+               if(result.length >0){
+                visitInfo = result.at(0)
+               }
+            
+               setVisit(visitInfo);
+        })();
 
-    // },[userID, eventID]);
-    return [isVisitor, setIsVisitor]    
+    },[userID, eventID]);
+    return [visit, setVisit]    
 }

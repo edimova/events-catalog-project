@@ -26,16 +26,24 @@ const getAllByRelation =(relation) =>{
 
 const getVisits =(userID, eventID)=>{
     const params = new URLSearchParams({
-        where: `"_ownerId"="${userID}","_id"="${eventID}"`,        
+        where: `_ownerId="${userID}" AND eventID="${eventID}"`,        
     })
 
+    const paramsS = params.toString().replaceAll("+","%20")
     console.log(params.toString())
-    return request.get(`${BASE_URL}?${params.toString()}`);
+    return request.get(`${BASE_URL}?${paramsS}`);
 }
+
+const remove = (visitID)=>{
+    return request.remove(`${BASE_URL}/${visitID}`)
+}
+
+
 
 const visitorAPI={
     getAll,
     create,
+    remove,
     getAllByRelation,
     getVisits,
 }
