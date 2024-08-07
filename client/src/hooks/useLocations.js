@@ -13,13 +13,17 @@ export function useGetAllLocations() {
 }
 
 export function useGetOneLocationByID(locationID) {
-  const [location, setLocation] = useState({});
+  const [location, setLocation] = useState({
+    _ownerId: '',
+     name: '',
+     url: ''
+  });
   useEffect(() => {
     (async () => {
       const result = await locationsAPI.getOne(locationID);
       setLocation(result);
     })();
-  }, []);
+  }, [locationID]);
   return [location, setLocation];
 }
 
