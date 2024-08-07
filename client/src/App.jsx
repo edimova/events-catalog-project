@@ -18,6 +18,7 @@ import LocationDetails from './components/locations/LocationDetails.jsx'
 import CategoryDetails from './components/categories/CategoryDetails.jsx'
 import EditEvent from './components/events/EditEvent.jsx'
 import PrivateView from './components/common/PrivateView.jsx'
+import NotFound from './components/common/NotFound.jsx'
 
 function App() {
 
@@ -42,6 +43,8 @@ function App() {
                         <Route path="/events/:eventId/edit" element={<EditEvent />} />
                         <Route path="/logout" element={<Logout />} />
                     </Route>
+                    <Route path="/not-found" element={<NotFound />}/>
+                    <Route path="/*" element={<NotFound />}/>
                 </Routes>
 
             </div>
